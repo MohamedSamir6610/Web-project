@@ -26,6 +26,12 @@ header .logo {
     color: white;
 
 }
+.header-bar {
+    background: #8B4513;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
 nav ul 
 {
     list-style: none;
