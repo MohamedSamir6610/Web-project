@@ -2,13 +2,13 @@ body
 {
     margin:0;
     font-family: "poppins", arial,sans-serif;
-    background-color:rgb(255, 255, 255);
+    background-color:#8B4513;
     color: #333;
 }
 header
 {
     background-color: #4b2e05;
-    color: white;
+    color: #8B4513;;
     text-align: center;
     padding: 20px 10px;
 }
