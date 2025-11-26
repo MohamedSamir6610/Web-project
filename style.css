@@ -20,17 +20,35 @@ header .logo {
 }
 .intro
 {
-    background-color:#4b2e02 ;
+    background-color: #8B4513;
     background-size: cover;
     background-position: center;
     color: white;
 
 }
-.header-bar {
-    background: #8B4513;
+.navbar {
+    background-color: #8B4513; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
     color: white;
-    text-align: center;
-    padding: 20px 0;
+}
+
+.logo h2 {
+    margin: 0;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #dcb58f; 
 }
 nav ul 
 {
@@ -47,17 +65,22 @@ section a
 }
 .menu
 {
-    background-color: #dbae65;
+    background-color:  #e6c9a3;
     text-align: center ;
     padding:60px 20px;
 
 }
 .menu-item img
 {
-   width: 500px;
-  height: 400px;
+   width: 30%;
+  height: 60%;
     border-radius: 10px;
     object-fit: cover;
+    transition: transform 0.3s ease;
+}
+img:hover
+{
+transform: scale(1.1);
 }
 .price
 {
@@ -65,3 +88,4 @@ section a
     font-weight: bold;
     display: block;
 }
+

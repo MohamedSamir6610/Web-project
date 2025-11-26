@@ -5,11 +5,36 @@ body {
 }
 
 
+
+.navbar2 {
+    background-color: #8B4513; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    color: white;
+}
+
+.logo h2 {
+    margin: 0;
+}
+
 .header-bar {
     background: #8B4513;
     color: white;
     text-align: center;
     padding: 20px 0;
+}
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #dcb58f; 
 }
 
 
@@ -40,9 +65,13 @@ body {
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
+     transition: transform 0.3s ease;
 }
 
-
+img:hover
+{
+transform: scale(1.1);
+}
 .about-text {
     width: 55%;
     display: flex;

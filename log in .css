@@ -4,14 +4,30 @@ body {
     background: #f7f3ee;
 }
 
-.header-bar {
-    background: #8B4513;
+.navbar2 {
+    background-color: #8B4513; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
     color: white;
-    text-align: center;
-    padding: 20px 0;
 }
 
+.logo h2 {
+    margin: 0;
+}
 
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #dcb58f; 
+}
 .container {
     width: 90%;
     margin: auto;
