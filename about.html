@@ -1,51 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>LUNARE Café</title>
+    <meta charset="UTF-8">
+    <title>About Us | LUNARE Café</title>
     <link rel="stylesheet" href="cc.css">
 </head>
 <body>
 
-
-<div class="navbar2">
-    <div class="logo">
-        <h2>About us</h2>
-    </div>
-    <div class="nav-links">
-        <a href="home.html">Home</a>
-        <a href="menu.html">menu</a>
-        <a href="contact.html">Contact us</a>
-        <a href="log in .html">log in</a>
-    </div>
-</div>
-<div class="container">
-
-    <div class="about-box">
-
-       
-        <div class="img-box">
-            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" alt="Coffee" class="about-img">
+    <!-- NAVBAR -->
+    <div class="navbar2">
+        <div class="logo">
+            <h2>LUNARE Café</h2>
         </div>
 
-       
+        <div class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="about.html" class="active">About us</a>
+            <a href="menu.html">Menu</a>
+            <a href="contact.html">Contact us</a>
+            <a href="log%20in%20.html">Log in</a>
+        </div>
+    </div>
+
+    <!-- HERO (صورة البن الكبيرة فوق) -->
+    <section class="hero">
+        <img src="about-beans.jpg" alt="Coffee Beans">
+        <div class="hero-text">
+            <h1>WELCOME TO LUNARE CAFÉ</h1>
+            <p>From freshly roasted beans to your screen – warm coffee, made easy.</p>
+        </div>
+    </section>
+
+    <!-- STORY SECTION (الكلام + صورة البار الصغيرة) -->
+    <section class="about-section">
         <div class="about-text">
-            <h2>Welcome to Our Coffee Shop</h2>
+            <h2>Story About Our Coffee Shop</h2>
 
             <p>
-                We deliver fresh coffee and premium drinks to your home.  
-                Our online coffee shop focuses on quality beans, careful preparation,  
-                and fast delivery. Enjoy your favorite coffee anytime, anywhere.  
-                Our team is dedicated to giving you the best coffee experience possible.  
-                Sit back, relax, and let us bring the coffee to you.
+                At LUNARE Café, we started with a simple idea: every cup of coffee should
+                feel warm, personal and special. We carefully choose our beans, roast them
+                in small batches and prepare each drink with attention so you can enjoy
+                rich flavor and a cozy café feeling wherever you are.
+            </p>
+
+            <p id="moreText" class="hidden">
+                We loved this experience so much that we decided to bring it online.  
+                Our website and app are designed to make ordering easier and faster for you:
+                you can explore the menu, customize your drink, choose your favorite beans,
+                and place your order from home or on the go – without waiting in line.
+                You can also schedule pickup or delivery at the time that suits you best.
+                LUNARE Café is here to help you relax, study or work while we take care of
+                the coffee.
             </p>
 
             <button id="readBtn" class="read-btn">Read More</button>
         </div>
 
-    </div>
+        <div class="about-image">
+            <img src="about-bar.jpg" alt="LUNARE Café Bar">
+        </div>
+    </section>
 
-</div>
-
-<script src="bb.js"></script>
+    <!-- js -->
+    <script src="bb.js"></script>
 </body>
 </html>

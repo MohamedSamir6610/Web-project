@@ -1,106 +1,179 @@
-body {
+/* RESET */
+* {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f7f3ee;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", Arial, sans-serif;
 }
 
+/* خلفية عامة دافية */
+body {
+    background: #f5eee4;
+    color: #3b2618;
+}
 
-
+/* ===== NAVBAR (نفس ستايل الكونتاكت) ===== */
 .navbar2 {
-    background-color: #8B4513; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(60, 40, 20, 0.75);
+    backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 50px;
-    color: white;
+    padding: 15px 60px;
+    z-index: 10;
 }
 
 .logo h2 {
+    color: #ffedd8;
     margin: 0;
+    font-weight: 700;
 }
 
-.header-bar {
-    background: #8B4513;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-}
 .nav-links a {
-    color: white;
+    color: #ffffff;
     text-decoration: none;
     margin-left: 25px;
     font-weight: bold;
+    font-size: 15px;
     transition: color 0.3s;
 }
 
-.nav-links a:hover {
-    color: #dcb58f; 
+.nav-links a:hover,
+.nav-links a.active {
+    color: #ffcf9b;
 }
 
-
-.container {
-    width: 90%;
-    margin: auto;
-    margin-top: 30px;
+/* ===== HERO: صورة البن فوق ===== */
+.hero {
+    position: relative;
+    height: 360px;
+    overflow: hidden;
+    margin-top: 70px; /* علشان ما تغطيها النافبار */
 }
 
-
-.about-box {
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.15);
-    display: flex;
-    align-items: stretch; 
-    gap: 20px;
-    padding: 20px;
-}
-
-
-.img-box {
-    width: 20%;
-}
-
-.about-img {
+.hero img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 10px;
-     transition: transform 0.3s ease;
+    display: block;
+    filter: brightness(0.8);
 }
 
-img:hover
-{
-transform: scale(1.1);
+.hero-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
 }
-.about-text {
-    width: 55%;
+
+.hero-text h1 {
+    font-size: 38px;
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+}
+
+.hero-text p {
+    font-size: 15px;
+}
+
+.about-section {
+    max-width: 1200px;
+    margin: 50px auto 80px;
+    padding: 45px 60px;
+    background: rgba(124, 84, 43, 0.30); /* لون بيج دافي شفاف */
+    border-radius: 24px;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     display: flex;
-    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.18);
+    color: #ffffff; /* يخلي النص أبيض */
+}
+
+.about-text {
+    flex: 1.5;
 }
 
 .about-text h2 {
-    color: #8B4513;
+    font-size: 26px;
     margin-bottom: 15px;
+    color: #5a3218;
 }
 
 .about-text p {
-    line-height: 3;
-    font-size: 16px;
-    color: #333;
-    flex-grow: 1;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 10px;
 }
 
+/* زر Read More */
 .read-btn {
-    margin-top: 5px;
-    padding: 10px 20px;
+    padding: 12px 35px;
+    background: #ad6b3a; /* بني دافي */
+    border-radius: 30px;
+    color: #fff;
     border: none;
-    background: #8B4513;
-    color: white;
-    border-radius: 5px;
+    font-weight: 600;
     cursor: pointer;
-    font-size: 16px;
+    transition: 0.3s;
+}
+.read-btn:hover {
+    background: #ffcf9b;
+    color: #000;
+}
+.hidden {
+    display: none;
 }
 
-.read-btn:hover {
-    background: #a05a2c;
+/* صورة البار الصغيرة جنب الكلام */
+.about-image {
+    flex: 0 0 260px;
+    text-align: right;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 260px;
+    border-radius: 18px;
+    object-fit: cover;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+    .about-section {
+        flex-direction: column;
+        padding: 30px 25px;
+        margin: 35px 15px 60px;
+    }
+
+    .about-image {
+        text-align: center;
+    }
+
+    .about-image img {
+        max-width: 320px;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar2 {
+        padding: 10px 20px;
+    }
+
+    .hero {
+        height: 260px;
+        margin-top: 60px;
+    }
+
+    .hero-text h1 {
+        font-size: 26px;
+    }
 }
