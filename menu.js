@@ -13,6 +13,26 @@ $(document).on("click", ".add-to-cart", function () {
     alert(`${name} added to cart!`);
 });
 
+
+function saveCart() {
+    localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+renderCart();
+$("#cart-footer").append(`
+    <button class="checkout-btn">Checkout</button>
+`);
+
+ // Load existing cart on page load
+$("#checkout-button").on("click", function())
+ {
+    if(cart.length === 0) {
+        alert("Your cart is empty! Add some items first.");
+    } 
+    else {
+        //window.location.href = "cart web project.html"; // open checkout page
+    }
+}
 $(document).on("click", ".item img, .item h3", function () {
     const parent = $(this).closest(".item");
     const selectedItem = {
