@@ -5,6 +5,8 @@ body
     background-color:#8B4513;
     color: #333;
 }
+/*#8B4513*/
+
 header
 {
     background-color: #4b2e05;
@@ -18,6 +20,8 @@ header .logo {
     display: block;
     margin: 0 ; 
 }
+
+
 .menu h2
 {
    color: rgb(104, 50, 17);
@@ -33,7 +37,7 @@ header .logo {
     color: white;
 
 }
-.navbar {
+/*.navbar {
     background-color: #8B4513; 
     display: flex;
     justify-content: space-between;
@@ -41,8 +45,21 @@ header .logo {
     padding: 15px 50px;
     color: white;
 }
+*/
 
-
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color:rgba(60, 40, 20, 0.75);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 60px;
+    z-index: 3;
+    backdrop-filter: blur(10px);
+}
 
 
 
@@ -99,6 +116,12 @@ transform: scale(1.1);
     font-weight: bold;
     display: block;
 }
+
+
+
+
+
+
 .menu-item p {
     font-size: 16px;
     color:  #4b2e05;        
@@ -114,34 +137,8 @@ transform: scale(1.1);
 
 
 
-body 
-{
-    margin:0;
-    font-family: "poppins", arial,sans-serif;
-    background-color:#8B4513;
-    color: #333;
-}
-header
-{
-    background-color: #4b2e05;
-    color: #8B4513;;
-    text-align: center;
-    padding: 20px 10px;
-}
-header .logo {
-    width: 100px; 
-    height: auto;
-    display: block;
-    margin: 0 ; 
-}
-.intro
-{
-    background-color: #8B4513;
-    background-size: cover;
-    background-position: center;
-    color: white;
 
-}
+
 
 .logo h2 {
     margin: 0;
@@ -178,22 +175,5 @@ section a
     padding:60px 20px;
 
 }
-.menu-item img
-{
-   width: 30%;
-  height: 60%;
-    border-radius: 10px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-img:hover
-{
-transform: scale(1.1);
-}
-.price
-{
-    color: rgb(170, 12, 70);
-    font-weight: bold;
-    display: block;
-}
+
 
