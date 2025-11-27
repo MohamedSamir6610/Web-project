@@ -70,6 +70,8 @@ body {
     border-radius: 28px;                         
     border: 1px solid rgba(255, 255, 255, 0.70);
     box-shadow: 0 0 18px rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    animation: fadeUp 0.9s ease-out forwards;
 }
 
 .contact-box h1 {
@@ -124,6 +126,9 @@ body {
     letter-spacing: 2px;
     cursor: pointer;
     transition: all 0.3s;
+    opacity: 0;
+    animation: fadeUp 0.9s ease-out forwards;
+    animation-delay: 0.15a;
 }
 
 .btn-send:hover {
@@ -131,7 +136,17 @@ body {
     color: #000000;
     transform: scale(1.05);
 }
-
+/* ===== Animations ===== */
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 @media (max-width: 768px) {
     .navbar2 {
