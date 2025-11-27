@@ -1,31 +1,36 @@
 body {
     font-family: 'Segoe UI', sans-serif;
-    background-color: #fdf6f0; 
-    color: #4b382a; 
+    background-color: #e4d3c5; 
+    color: #38281c; 
     margin: 0;
     padding: 0;
 }
 
 
 .navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color:rgba(84, 50, 16, 0.75);
     display: flex;
     justify-content: space-between;
-    padding: 15px 30px;
-    background-color: #a67c52; 
-    color: #fff;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    align-items: center;
+    padding: 15px 60px;
+    z-index: 3;
+    backdrop-filter: blur(10px);
 }
 
 .nav-links a {
     margin-left: 20px;
     text-decoration: none;
-    color: #fff;
+    color: #2c2010;
     font-weight: bold;
     transition: 0.3s;
 }
 
 .nav-links a:hover {
-    color: #fdf6f0; 
+    color: #9b6332; 
 }
 
 
@@ -34,7 +39,7 @@ body {
     padding: 100px 20px;
     background: url('coffee-hero.jpg') no-repeat center;
     background-size: cover;
-    color: #fff;
+    color: #78431b;
     text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
 }
 
@@ -49,7 +54,7 @@ body {
 }
 
 .hero .btn {
-    background-color: #d4a373; 
+    background-color: #8e6032; 
     color: #4b382a; 
     padding: 12px 30px;
     border-radius: 12px;
@@ -59,8 +64,8 @@ body {
 }
 
 .hero .btn:hover {
-    background-color: #c99f6a; 
-    color: #fff;
+    background-color: #936a38; 
+    color: #7f5621;
 }
 
 /* Featured Section */
@@ -72,7 +77,7 @@ body {
 .featured h2 {
     font-size: 36px;
     margin-bottom: 40px;
-    color: #4b382a; 
+    color: #7b451e; 
 }
 
 .featured .products {
@@ -83,7 +88,7 @@ body {
 }
 
 .featured .product {
-    background-color: #fff5eb; 
+    background-color: #8d5d2e; 
     border-radius: 15px;
     padding: 15px;
     width: 220px;
