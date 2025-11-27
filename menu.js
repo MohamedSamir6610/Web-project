@@ -13,7 +13,6 @@ $(document).on("click", ".add-to-cart", function () {
     alert(`${name} added to cart!`);
 });
 
-
 $(document).on("click", ".item img, .item h3", function () {
     const parent = $(this).closest(".item");
     const selectedItem = {

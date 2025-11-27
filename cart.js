@@ -21,9 +21,8 @@ function renderCart() {
 renderCart();
 
 $("#checkout").on("click", function() {
-    if($("#address").val() === "") {
-        alert("Please enter your address");
-        return;
-    }
+    if($("#address").val() === "") { alert("Please enter your address"); return; }
     alert("Order placed successfully!");
+    localStorage.removeItem("cart");
+    window.location.href = "menu.html";
 });
