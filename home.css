@@ -1,0 +1,119 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #e4d3c5; 
+    color: #38281c; 
+    margin: 0;
+    padding: 0;
+}
+
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color:rgba(84, 50, 16, 0.75);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 60px;
+    z-index: 3;
+    backdrop-filter: blur(10px);
+}
+
+.nav-links a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #2c2010;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #9b6332; 
+}
+
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: url('coffee-hero.jpg') no-repeat center;
+    background-size: cover;
+    color: #78431b;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+.hero h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+
+.hero .btn {
+    background-color: #8e6032; 
+    color: #4b382a; 
+    padding: 12px 30px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.hero .btn:hover {
+    background-color: #936a38; 
+    color: #7f5621;
+}
+
+/* Featured Section */
+.featured {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.featured h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #7b451e; 
+}
+
+.featured .products {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.featured .product {
+    background-color: #8d5d2e; 
+    border-radius: 15px;
+    padding: 15px;
+    width: 220px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.featured .product:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.featured .product img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+.featured .product h3 {
+    margin: 10px 0 5px 0;
+    color: #4b382a; 
+}
+
+.featured .product p {
+    font-size: 14px;
+    color: #6b4f35; 
+}
