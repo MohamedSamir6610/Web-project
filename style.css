@@ -18,6 +18,13 @@ header .logo {
     display: block;
     margin: 0 ; 
 }
+.menu h2
+{
+   color: rgb(104, 50, 17);
+   text-decoration: underline;
+   font-weight: bold;
+   font-size: 3cap;
+}
 .intro
 {
     background-color: #8B4513;
@@ -88,4 +95,18 @@ transform: scale(1.1);
     font-weight: bold;
     display: block;
 }
+.menu-item p {
+    font-size: 16px;
+    color:  #4b2e05;        
+    margin: 8px 0;         
+    font-weight: 400;
+    letter-spacing: 0.5px; 
+    line-height: 1.5;      
+    font-family: "Poppins", sans-serif;  
+    font-style: italic;
+}
+
+
+
+
 

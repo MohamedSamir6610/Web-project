@@ -73,7 +73,7 @@ $("#cart-footer").append(`
 $("#checkout-button").on("click", function() {
     if(cart.length === 0) {
         alert("Your cart is empty! Add some items first.");
-    } else {
-        window.location.href = "cart web project.html"; // open checkout page
-    }
+    } //else {
+        //window.location.href = "cart web project.html"; // open checkout page
+    //}
 });
