@@ -170,31 +170,11 @@
     </div>
 </section>
 
-<script>
-    // Fade in menu items on scroll
-    const menuItems = document.querySelectorAll('.menu-item');
-    window.addEventListener('scroll', () => {
-        menuItems.forEach(item => {
-            const rect = item.getBoundingClientRect();
-            if(rect.top < window.innerHeight - 50){
-                item.style.opacity = 1;
-                item.style.transform = 'translateY(0)';
-            }
-        });
-    });
 
-    // Add to cart alert
-    const cartButtons = document.querySelectorAll('.add-to-cart');
-    cartButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const item = btn.parentElement;
-            const name = item.dataset.name;
-            const price = item.dataset.price;
-            alert(name + " added to cart! Price: " + price + " EGP");
-            
-        });
-    });
-</script>
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="menu.js"></script>
 
 </body>
 </html>
