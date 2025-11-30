@@ -2,7 +2,7 @@ let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 function renderCart() {
     $("#cart-items").empty();
-    let total = 20; // delivery
+    let total = 20; 
 
     cart.forEach(item => {
         total += item.price * item.qty;

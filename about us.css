@@ -1,4 +1,4 @@
-/* RESET */
+
 * {
     margin: 0;
     padding: 0;
@@ -6,13 +6,13 @@
     font-family: "Poppins", Arial, sans-serif;
 }
 
-/* خلفية عامة دافية */
+
 body {
     background: #f5eee4;
     color: #3b2618;
 }
 
-/* ===== NAVBAR (نفس ستايل الكونتاكت) ===== */
+
 .navbar2 {
     position: fixed;
     top: 0;
@@ -47,12 +47,12 @@ body {
     color: #ffcf9b;
 }
 
-/* ===== HERO: صورة البن فوق ===== */
+
 .hero {
     position: relative;
     height: 360px;
     overflow: hidden;
-    margin-top: 70px; /* علشان ما تغطيها النافبار */
+    margin-top: 70px; 
 }
 
 .hero img {
@@ -89,7 +89,7 @@ body {
     max-width: 1200px;
     margin: 50px auto 80px;
     padding: 45px 60px;
-    background: rgba(124, 84, 43, 0.30); /* لون بيج دافي شفاف */
+    background: rgba(122, 77, 36, 0.61); 
     border-radius: 24px;
     backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.15);
@@ -97,7 +97,7 @@ body {
     gap: 40px;
     align-items: center;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.18);
-    color: #ffffff; /* يخلي النص أبيض */
+    color: #ffffff; 
 
     opacity: 0;
     animation:fadeUp 1s ease-out forwards;
@@ -112,7 +112,7 @@ body {
 .about-text h2 {
     font-size: 26px;
     margin-bottom: 15px;
-    color: #d9a066; /* بني دافي جميل */
+    color: #d9a066; 
     font-weight: 700;
 }
 
@@ -122,10 +122,10 @@ body {
     margin-bottom: 10px;
 }
 
-/* زر Read More */
+
 .read-btn {
     padding: 12px 35px;
-    background: #ad6b3a; /* بني دافي */
+    background: #ad6b3a; 
     border-radius: 30px;
     color: #fff;
     border: none;
@@ -141,7 +141,7 @@ body {
     display: none;
 }
 
-/* صورة البار الصغيرة جنب الكلام */
+
 .about-image {
     flex: 0 0 260px;
     text-align: right;
@@ -153,7 +153,7 @@ body {
     border-radius: 18px;
     object-fit: cover;
 }
-/* ===== Animations ===== */
+
 @keyframes fadeUp {
     0% {
         opacity: 0;
@@ -164,7 +164,7 @@ body {
         transform: translateY(0);
     }
 }
-/* ===== Responsive ===== */
+
 @media (max-width: 900px) {
     .about-section {
         flex-direction: column;

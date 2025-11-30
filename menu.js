@@ -1,6 +1,6 @@
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-// زرار Add To Cart
+
 $(document).on("click", ".add-to-cart", function () {
 
     let name = $(this).data("name");
@@ -15,10 +15,10 @@ $(document).on("click", ".add-to-cart", function () {
         img: img
     };
 
-    // نخزن بيانات المنتج للصفحة التانية
+
     localStorage.setItem("selectedItem", JSON.stringify(selectedItem));
 
-    // نشوف هو موجود في الكارت ولا لأ
+
     let existing = cart.find(item => item.name === name);
 
     if (existing) {
@@ -36,9 +36,9 @@ $(document).on("click", ".add-to-cart", function () {
 
     localStorage.setItem("cart", JSON.stringify(cart));
 
-    // الرسالة النهائية بس الاسم والسعر
+
     alert(name + " - " + price + " EGP");
 
-    // نقل لصفحة المنتج
+
     window.location.href = "item.html";
 });

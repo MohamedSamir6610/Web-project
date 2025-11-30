@@ -1,20 +1,36 @@
 let item = JSON.parse(localStorage.getItem("selectedItem"));
 let qty = 1;
 
+
 $("#item-img").attr("src", item.img);
 $("#item-name").text(item.name);
 $("#item-desc").text(item.desc);
 $("#item-price").text(item.price + " EGP");
 
+
+function animateQty() {
+    $("#qty").fadeOut(100).fadeIn(100);
+}
+
+
 $("#plus").on("click", function() {
     qty++;
     $("#qty").text(qty);
+    animateQty();
 });
 
 $("#minus").on("click", function() {
-    if(qty > 1) qty--;
-    $("#qty").text(qty);
+    if(qty > 1) {
+        qty--;
+        $("#qty").text(qty);
+        animateQty();
+    }
 });
+
+
+function animateAdd() {
+    $("#item-img").fadeTo(100, 0.5).fadeTo(100, 1);
+}
 
 $("#addCart").on("click", function() {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -27,9 +43,16 @@ $("#addCart").on("click", function() {
             name: item.name,
             price: item.price,
             qty: qty,
-            note: $("#note").val()
+            note: ""
         });
 
     localStorage.setItem("cart", JSON.stringify(cart));
-    window.location.href = "cart.html";
+
+
+    animateAdd();
+
+
+    setTimeout(() => {
+        window.location.href = "cart.html";
+    }, 200);
 });
