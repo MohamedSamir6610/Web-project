@@ -12,7 +12,7 @@ body {
     color: var(--dark-text);
 }
 
-/* Navbar */
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -37,7 +37,6 @@ body {
     text-decoration: underline;
 }
 
-/* Hero Banner */
 .hero-banner {
     position: relative;
     width: 100%;
@@ -80,7 +79,7 @@ body {
     line-height: 1.5;
 }
 
-/* About Section */
+
 .about {
     padding: 50px;
     text-align: center;
@@ -105,7 +104,7 @@ body {
     margin-top: 20px;
 }
 
-/* Why Choose Us */
+
 .why-us {
     padding: 50px;
     background-color: var(--light-brown);
@@ -140,7 +139,7 @@ body {
     transform: scale(1.05) rotate(-1deg);
 }
 
-/* Gallery Section */
+
 .gallery {
     padding: 50px;
     text-align: center;
@@ -173,7 +172,7 @@ body {
     box-shadow: 0 15px 35px rgba(0,0,0,0.3);
 }
 
-/* Testimonials */
+
 .testimonials {
     padding: 50px;
     background-color: var(--cream);
@@ -205,7 +204,7 @@ body {
     margin-top: 15px;
 }
 
-/* Footer */
+
 footer {
     text-align: center;
     padding: 20px;
