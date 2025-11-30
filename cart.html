@@ -5,23 +5,6 @@
     <link rel="stylesheet" href="cart.css">
 </head>
 <body>
-    <script>
-        // جلب الكارت من localStorage
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
-        const cartDiv = document.getElementById('cart-items'); // div فاضي في الكارت
-        const totalp = document.getElementById('total');      // فقرة لإجمالي السعر
-    
-        let total = 0;
-        cart.forEach(item => {
-            const div = document.createElement('div');
-            div.textContent = item.name + " - " + item.price + " EGP";
-            cartDiv.appendChild(div);
-            total += parseInt(item.price);
-        });
-    
-        totalP.textContent = "Total: " + total + " EGP";
-    </script>
-    
 
 <h2>Your Cart</h2>
 <div id="cart-items"></div>
@@ -30,6 +13,30 @@
 
 <input type="text" id="address" placeholder="Enter your address">
 <button id="checkout">Place Order</button>
+
+<script>
+    // جلب الكارت من localStorage
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartDiv = document.getElementById('cart-items'); 
+    const totalP = document.getElementById('total');      
+
+    let total = 0;
+
+    cart.forEach(item => {
+        const div = document.createElement('div');
+
+        // التأكد من وجود الكمية والسعر
+        let price = Number(item.price);
+        let qty = Number(item.qty || 1);
+
+        div.textContent = item.name + " - " + price + " EGP x " + qty;
+        cartDiv.appendChild(div);
+
+        total += price * qty;
+    });
+
+    totalP.textContent = total;
+</script>
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="cart.js"></script>
