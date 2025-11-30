@@ -1,0 +1,114 @@
+/* menu.css */
+
+/* عام */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f1e7;
+    margin: 0;
+    color: #2e2e2e;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: #7b4e2d;
+    color: white;
+}
+
+.navbar h2 { margin: 0; }
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+/* Grid المنيو */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 40px;
+    justify-items: center;
+}
+
+/* كل عنصر من المنيو */
+.menu-item {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.menu-item img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-item img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.menu-item h3 {
+    margin: 10px 0 5px;
+    font-size: 18px;
+}
+
+.menu-item p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.price {
+    font-weight: bold;
+    display: block;
+    margin: 5px 0 10px;
+    color: #7b4e2d;
+}
+
+/* زر الإضافة للكارت */
+.add-to-cart {
+    padding: 8px 15px;
+    background-color: #7b4e2d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+    transform: scale(1.1);
+    background-color: #5c3820;
+}
+
+/* عند ظهور العناصر عند السكروول */
+.menu-item.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav-links {
+        margin-top: 10px;
+    }
+}
