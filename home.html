@@ -89,7 +89,11 @@
         </div>
     </section>
 
-   
+    <script>
+        window.addEventListener("beforeunload", function() {
+            localStorage.removeItem("cart");
+        });
+        </script>
     <footer>
         &copy; 2025 LUNARE Café. All rights reserved.
     </footer>

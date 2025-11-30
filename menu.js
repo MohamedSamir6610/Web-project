@@ -27,7 +27,7 @@ $(document).on("click", ".add-to-cart", function () {
         cart.push({
             name: name,
             price: price,
-            qty: 1,
+            qty: 0,
             desc: desc,
             img: img,
             note: ""
