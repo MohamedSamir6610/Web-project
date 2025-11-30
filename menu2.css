@@ -1,12 +1,45 @@
 /* menu.css */
 
 /* عام */
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f5f1e7;
     margin: 0;
     color: #2e2e2e;
 }
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 250px)); /* كل عنصر عرضه ثابت */
+    gap: 20px;
+    padding: 40px;
+    justify-content: center; /* يركز المربعات */
+}
+
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    height: 420px;       /* الطول ثابت */
+    width: 250px;        /* العرض ثابت */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.menu-item img {
+    width: 100%;
+    height: 180px;       /* ارتفاع الصورة ثابت */
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 
 /* Navbar */
 .navbar {
@@ -33,6 +66,29 @@ body {
 
 /* Grid المنيو */
 .menu-grid {
+    .menu-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* يخلي السعر دايمًا في الأسفل */
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    height: 420px; /* طول ثابت للمربع */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.menu-item img {
+    width: 100%;
+    height: 180px; /* طول ثابت للصورة */
+    object-fit: cover; /* يحافظ على نسبة الصورة */
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
