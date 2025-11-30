@@ -36,25 +36,9 @@ $(document).on("click", ".add-to-cart", function () {
 
     localStorage.setItem("cart", JSON.stringify(cart));
 
-    alert(name + " added to cart!");
+    // الرسالة النهائية بس الاسم والسعر
+    alert(name + " - " + price + " EGP");
 
     // نقل لصفحة المنتج
-    window.location.href = "item.html";
-});
-
-
-// الضغط على الصورة أو العنوان يفتح صفحة المنتج
-$(document).on("click", ".item img, .item h3", function () {
-    
-    let parent = $(this).closest(".item");
-
-    let selectedItem = {
-        name: parent.data("name"),
-        price: parent.data("price"),
-        desc: parent.data("desc"),
-        img: parent.data("img")
-    };
-
-    localStorage.setItem("selectedItem", JSON.stringify(selectedItem));
     window.location.href = "item.html";
 });
