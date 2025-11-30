@@ -22,7 +22,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.30);   
+    background: #7b4e2d;   
     backdrop-filter: blur(20px);       
     display: flex;
     justify-content: space-between;
