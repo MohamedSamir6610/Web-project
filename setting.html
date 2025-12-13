@@ -11,43 +11,47 @@
 <div class="container">
     <h2>Register ☕</h2>
 
-    <div class="section">
-        <h3>Profile</h3>
+    <form method="POST" action="api/reg.php">
 
-        <label>Name</label>
-        <input type="text" id="name">
+        <div class="section">
+            <h3>Profile</h3>
 
-        <label>Email</label>
-        <input type="email" id="email">
+            <label>Name</label>
+            <input type="text" name="username" placeholder="Name">
 
-        <label>Phone</label>
-        <input type="text" id="phone">
-    </div>
+            <label>Email</label>
+            <input type="email" name="email" placeholder="Email">
 
-    <div class="section">
-        <h3>Preferences</h3>
-
-        <label>Language</label>
-        <select id="language">
-            <option>English</option>
-            <option>Arabic</option>
-        </select>
-
-        <div class="toggle">
-            <input type="checkbox" id="notify" checked>
-            <label for="notify">Enable notifications</label>
+            <label>Phone</label>
+            <input type="text" name="phone" placeholder="Phone">
         </div>
-    </div>
 
-    <div class="section">
-        <h3>Security</h3>
+        <div class="section">
+            <h3>Preferences</h3>
 
-        <label>New Password</label>
-        <input type="password" id="password">
-    </div>
+            <label>Language</label>
+            <select name="language">
+                <option>English</option>
+                <option>Arabic</option>
+            </select>
 
-    <button onclick="saveSettings()">Save Changes</button>
-    <button class="danger" onclick="deleteAccount()">Delete Account</button>
+            <div class="toggle">
+                <input type="checkbox" name="notify" checked>
+                <label for="notify">Enable notifications</label>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Security</h3>
+
+            <label>New Password</label>
+            <input type="password" name="password" placeholder="Password">
+        </div>
+
+        <button type="submit">Save Changes</button>
+        <button type="button" class="danger" onclick="deleteAccount()">Delete Account</button>
+
+    </form>
 </div>
 
 <script src="script.js"></script>
