@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Café Settings</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Account Settings ☕</h2>
+
+    <div class="section">
+        <h3>Profile</h3>
+
+        <label>Name</label>
+        <input type="text" id="name">
+
+        <label>Email</label>
+        <input type="email" id="email">
+
+        <label>Phone</label>
+        <input type="text" id="phone">
+    </div>
+
+    <div class="section">
+        <h3>Preferences</h3>
+
+        <label>Language</label>
+        <select id="language">
+            <option>English</option>
+            <option>Arabic</option>
+        </select>
+
+        <div class="toggle">
+            <input type="checkbox" id="notify" checked>
+            <label for="notify">Enable notifications</label>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>Security</h3>
+
+        <label>New Password</label>
+        <input type="password" id="password">
+    </div>
+
+    <button onclick="saveSettings()">Save Changes</button>
+    <button class="danger" onclick="deleteAccount()">Delete Account</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
