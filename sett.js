@@ -1,9 +1,9 @@
-// customer-settings.js
+
 $(document).ready(function() {
-    // Load saved customer settings from localStorage
+    
     loadCustomerSettings();
     
-    // Save profile settings
+    
     $('#profile-form').submit(function(e) {
         e.preventDefault();
         const profile = {
@@ -16,34 +16,45 @@ $(document).ready(function() {
         alert('Profile saved successfully!');
     });
     
-    // Save preferences
+   
     $('#preferences-form').submit(function(e) {
         e.preventDefault();
         const preferences = {
             emailNotifications: $('#notifications').is(':checked'),
             smsNotifications: $('#sms-notifications').is(':checked'),
-            favoriteDrink: $('#favorite-drink').val()
+            
         };
         localStorage.setItem('customerPreferences', JSON.stringify(preferences));
         alert('Preferences saved successfully!');
     });
     
-    // Change password (placeholder - in real app, handle securely)
+    
     $('#change-password').click(function() {
         const newPassword = prompt('Enter new password:');
         if (newPassword) {
-            // Simulate saving (in real app, send to server)
+            
             alert('Password changed successfully!');
         }
     });
     
-    // Delete account (placeholder)
+    
     $('#delete-account').click(function() {
         if (confirm('Are you sure you want to delete your account? This action cannot be undone.')) {
-            // Simulate deletion (in real app, send to server)
+            
             localStorage.clear();
             alert('Account deleted.');
-            window.location.href = 'index.html'; // Redirect to home
+            window.location.href = 'home.html'; 
+        }
+    });
+    
+    
+    $('#logout-btn').click(function() {
+        if (confirm('Are you sure you want to log out?')) {
+            
+            localStorage.removeItem('customerProfile');
+            localStorage.removeItem('customerPreferences');
+            alert('You have been logged out.');
+            window.location.href = 'login.html'; 
         }
     });
     
@@ -60,7 +71,7 @@ $(document).ready(function() {
         if (preferences) {
             $('#notifications').prop('checked', preferences.emailNotifications);
             $('#sms-notifications').prop('checked', preferences.smsNotifications);
-            $('#favorite-drink').val(preferences.favoriteDrink);
+            
         }
     }
 });
