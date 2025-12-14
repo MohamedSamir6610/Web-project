@@ -15,27 +15,48 @@
         <h3>Profile</h3>
 
         <label>Name</label>
-        <input type="text" id="name">
+        <input type="text" id="name" name="Name">
 
         <label>Email</label>
-        <input type="email" id="email">
+        <input type="email" id="email" name="Email">
 
         <label>Phone</label>
-        <input type="text" id="phone">
+        <input type="text" id="phone" name="Phone">
     </div>
 
-    
     <div class="section">
         <h3>Security</h3>
 
         <label>New Password</label>
-        <input type="password" id="password">
+        <input type="password" id="password" name="NewPassword">
     </div>
 
     <button onclick="saveSettings()">Save Changes</button>
     <button class="danger" onclick="deleteAccount()">Delete Account</button>
+
+    <!-- div لعرض الرسائل -->
+    <div id="message"></div>
 </div>
 
-<script src="script.js"></script>
+<script>
+async function saveSettings(){
+    const formData = new FormData();
+    formData.append('Name', document.getElementById('name').value);
+    formData.append('Email', document.getElementById('email').value);
+    formData.append('Phone', document.getElementById('phone').value);
+    formData.append('NewPassword', document.getElementById('password').value);
+
+    const res = await fetch('api/forget-password.php', { method: 'POST', body: formData });
+    const text = await res.text();
+    document.getElementById('message').innerHTML = text;
+}
+
+async function deleteAccount(){
+    const res = await fetch('api/delete-account.php', { method: 'POST' });
+    const text = await res.text();
+    document.getElementById('message').innerHTML = text;
+}
+</script>
+
 </body>
 </html>

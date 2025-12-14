@@ -2,7 +2,7 @@
 $host = "localhost";
 $user = "root";
 $password = "";
-$dbname = "wep-project1";
+$dbname = "ecommerce_db";
 
 $conn = mysqli_connect($host, $user, $password, $dbname);
 
