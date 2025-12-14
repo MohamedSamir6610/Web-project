@@ -2,62 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Café Settings</title>
+    <title>Register</title>
     <link rel="stylesheet" href="setting.css">
 </head>
-
 <body>
 
-<div class="container">
-    <h2>Register ☕</h2>
+<h2>Register</h2>
 
-    <form method="POST" action="api/reg.php">
+<form method="POST" action="api/register.php">
 
-        <div class="section">
-            <h3>Profile</h3>
+    <label>Name</label>
+    <input type="text" name="Name">
 
-            <label>Name</label>
-            <input type="text" name="username" placeholder="Name">
+    <br><br>
 
-            <label>Email</label>
-            <input type="email" name="email" placeholder="Email">
+    <label>Email</label>
+    <input type="email" name="Email">
 
-            <label>Phone</label>
-            <input type="text" name="phone" placeholder="Phone">
-        </div>
+    <br><br>
 
-        <div class="section">
-            <h3>Preferences</h3>
+    <label>Phone</label>
+    <input type="text" name="Phone">
 
-            <label>Language</label>
-            <select name="language">
-                <option>English</option>
-                <option>Arabic</option>
-            </select>
+    <br><br>
 
-            <div class="toggle">
-                <input type="checkbox" name="notify" checked>
-                <label for="notify">Enable notifications</label>
-            </div>
-        </div>
+    <label>New Password</label>
+    <input type="password" name="NewPassword">
 
-        <div class="section">
-            <h3>Security</h3>
+    <br><br>
 
-            <label>New Password</label>
-            <input type="password" name="New password" placeholder="New Password">
-        </div>
+    <button type="submit">Register</button>
 
-        <button type="submit">Save Changes</button>
-        <button type="button" class="danger" onclick="deleteAccount()">Delete Account</button>
+</form>
 
-    </form>
-
-    
-  
-    
-</div>
-
-<script src="script.js"></script>
 </body>
 </html>
