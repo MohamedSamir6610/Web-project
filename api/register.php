@@ -1,13 +1,8 @@
 <?php
 include "../db.php";
 
-/* التأكد إن البيانات وصلت */
-if (
-    !isset($_POST['Name']) ||
-    !isset($_POST['Email']) ||
-    !isset($_POST['Phone']) ||
-    !isset($_POST['NewPassword'])
-) {
+// التأكد من وصول البيانات
+if (!isset($_POST['Name'], $_POST['Email'], $_POST['Phone'], $_POST['NewPassword'])) {
     die("Form data not sent");
 }
 
@@ -16,59 +11,35 @@ $email    = trim($_POST['Email']);
 $phone    = trim($_POST['Phone']);
 $password = $_POST['NewPassword'];
 
+// التحقق من البيانات مش فاضية
 if ($name == "" || $email == "" || $password == "") {
-    echo "empty";
+    echo "❌ البيانات غير مكتملة، من فضلك أكمل جميع الحقول.";
     exit;
 }
 
-/* تشفير الباسورد */
+// تشفير الباسورد
 $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-/* التأكد إن الإيميل مش موجود */
-$stmt = mysqli_prepare(
-    $conn,
-    "SELECT customer_id FROM Customer WHERE email = ?"
-);
-
-if (!$stmt) {
-    die("Prepare failed: " . mysqli_error($conn));
-}
-
+// التأكد من أن الإيميل مش موجود
+$stmt = mysqli_prepare($conn, "SELECT customer_id FROM customer WHERE email = ?");
 mysqli_stmt_bind_param($stmt, "s", $email);
 mysqli_stmt_execute($stmt);
 mysqli_stmt_store_result($stmt);
 
 if (mysqli_stmt_num_rows($stmt) > 0) {
-    echo "exists";
+    echo "⚠️ هذا الإيميل مستخدم من قبل، حاول تسجيل الدخول أو استعادة كلمة المرور.";
     exit;
 }
-
 mysqli_stmt_close($stmt);
 
-/* إدخال البيانات */
-$stmt = mysqli_prepare(
-    $conn,
-    "INSERT INTO Customer (name, email, phone, password)
-     VALUES (?, ?, ?, ?)"
-);
-
-if (!$stmt) {
-    die("Prepare failed: " . mysqli_error($conn));
-}
-
-mysqli_stmt_bind_param(
-    $stmt,
-    "ssss",
-    $name,
-    $email,
-    $phone,
-    $hashed_password
-);
+// إدخال البيانات
+$stmt = mysqli_prepare($conn, "INSERT INTO customer (name, email, phone, password) VALUES (?, ?, ?, ?)");
+mysqli_stmt_bind_param($stmt, "ssss", $name, $email, $phone, $hashed_password);
 
 if (mysqli_stmt_execute($stmt)) {
-    echo "success";
+    echo "✅ تم التسجيل بنجاح! أهلاً بك، <strong>$name</strong> 🎉";
 } else {
-    echo "error";
+    echo "❌ حدث خطأ أثناء التسجيل، حاول مرة أخرى.";
 }
 
 mysqli_stmt_close($stmt);

@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +7,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
 
 <div class="navbar2">
     <div class="logo">
@@ -21,71 +18,81 @@
         <a href="menu.html">Menu</a>
         <a href="contact.html">Contact us</a>
         <a href="log in .html" class="active"> Log in</a>
-       
     </div>
 </div>
+
 <div class="container">
-        <div class="login-box">
-            <h2 class="login-title">Login</h2>
+    <div class="login-box">
+        <h2 class="login-title">Login</h2>
 
-            <form id="loginForm">
-               
-                <div class="field">
-                    <label for="username">Username</label>
-                    <input
-                        type="text"
-                        id="username"
-                        name="username"
-                        placeholder="Enter your username"
-                        required>
-                </div>
+        <!-- تعديل بسيط: إضافة method="POST" و action -->
+        <form id="loginForm" method="POST" action="api/login.php">
+           
+            <div class="field">
+                <label for="username">Username</label>
+                <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    placeholder="Enter your username"
+                    required>
+            </div>
 
-                
-                <div class="field">
-                    <label for="password">Password</label>
-                    <input
-                        type="password"
-                        id="password"
-                        name="password"
-                        placeholder="Enter your password"
-                        required>
-                </div>
+            <div class="field">
+                <label for="password">Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    name="Password"
+                    placeholder="Enter your password"
+                    required>
+            </div>
 
-                
-                <div class="field">
-                    <label for="Email">Email</label>
-                        <input 
-                        type="Email"
-                        id="Email"
-                        name="Email"
-                        placeholder="Enter your Email"
-                        required>
-                    </label>
+            <div class="field">
+                <label for="Email">Email</label>
+                <input 
+                    type="Email"
+                    id="Email"
+                    name="Email"
+                    placeholder="Enter your Email"
+                    required>
+            </div>
 
-                    
-                </div>
-                <div class="options">
-                    <label class="remember">
-                        <input type="checkbox" id="rememberMe">
-                        <span>Remember Me</span>
-                    </label>
-                    <a href="forget pass.html">Forget Password</a>
-                </div>
+            <div class="options">
+                <label class="remember">
+                    <input type="checkbox" id="rememberMe">
+                    <span>Remember Me</span>
+                </label>
+                <a href="forget pass.html">Forget Password</a>
+            </div>
 
-                
-                <button type="submit" class="btn-login">Log in</button>
-            </form>
+            <button type="submit" class="btn-login">Log in</button>
+        </form>
 
-            
-            <p class="register-text">
-                Don't have an account?
-                <a href="setting.html">Register</a>
-            </p>
-        </div>
+        <p class="register-text">
+            Don't have an account?
+            <a href="setting.html">Register</a>
+        </p>
     </div>
+</div>
 
-    <script src="log in.js"></script>
+<script>
+const form = document.getElementById('loginForm');
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
     
-    
+
+
+    try {
+        const response = await fetch(form.action, { method: 'POST', body: formData });
+        const text = await response.text();
+        alert(text); // عرض نتيجة login.php
+    } catch (error) {
+        alert('حدث خطأ أثناء تسجيل الدخول');
+    }
+});
+</script>
+
 </body>
 </html>
