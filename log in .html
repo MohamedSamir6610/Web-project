@@ -82,6 +82,8 @@ form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const formData = new FormData(form);
     
+
+
     try {
         const response = await fetch(form.action, { method: 'POST', body: formData });
         const text = await response.text();
