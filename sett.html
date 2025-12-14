@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Settings</title>
+    <link rel="stylesheet" href="sett.css">
+</head>
+<body>
+    <header>
+        <h1>My Account Settings</h1>
+        <nav>
+            <ul>
+                
+                 <li><a href="home.html">Home</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="profile-settings">
+            <h2>Profile Settings</h2>
+            <form id="profile-form">
+                <div class="setting-group">
+                    <label for="full-name">Full Name:</label>
+                    <input type="text" id="full-name" name="full-name" value=" ">
+                </div>
+                
+                <div class="setting-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" value="  @example.com">
+                </div>
+                
+                <div class="setting-group">
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" name="phone" value="  ">
+                </div>
+                
+                <div class="setting-group">
+                    <label for="address">Delivery Address:</label>
+                    <textarea id="address" name="address"> Main St, City, State </textarea>
+                </div>
+                
+                <button type="submit" id="save-profile">Save Profile</button>
+            </form>
+        </section>
+        
+        <section id="preferences">
+            <h2>Preferences</h2>
+            <form id="preferences-form">
+                <div class="setting-group">
+                    <label for="notifications">Email Notifications:</label>
+                    <input type="checkbox" id="notifications" name="notifications" checked>
+                </div>
+                
+                <div class="setting-group">
+                    <label for="sms-notifications">SMS Notifications:</label>
+                    <input type="checkbox" id="sms-notifications" name="sms-notifications">
+                </div>
+                
+                
+                
+                <button type="submit" id="save-preferences">Save Preferences</button>
+            </form>
+        </section>
+        
+        <section id="account-actions">
+            <h2>Account Actions</h2>
+            <button id="change-password">Change Password</button>
+             <a href="home.html"><button id="delete-account">Delete Account</button></a>
+             <a href="log in .html" ><button id="logout-btn">Logout</button></a>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2023 Online Cafe. All rights reserved.</p>
+    </footer>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="sett.js"></script>
+</body>
+</html>
