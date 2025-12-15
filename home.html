@@ -5,10 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LUNARE Café - Home</title>
     <link rel="stylesheet" href="home.css">
-    <script src="home.js"></script>
-
-
-    
 </head>
 <body>
     
@@ -20,7 +16,7 @@
             <a href="menu.html">Menu</a>
             <a href="contact.html">Contact</a>
             <a href="log in .html">Log In</a>
-           <a href="sett.html">Go to Settings ⚙</a>
+          
 
 
         </div>
@@ -96,7 +92,11 @@
         </div>
     </section>
 
-    
+    <script>
+        window.addEventListener("beforeunload", function() {
+            localStorage.removeItem("cart");
+        });
+        </script>
     <footer>
         &copy; 2025 LUNARE Café. All rights reserved.
     </footer>

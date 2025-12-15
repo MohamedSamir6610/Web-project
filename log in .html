@@ -25,8 +25,8 @@
     <div class="login-box">
         <h2 class="login-title">Login</h2>
 
-        
-        <form id="loginForm" method="POST" action="api/login.php">
+        <!-- تعديل بسيط: إضافة method="POST" و action -->
+        <form id="loginForm" method="POST" action="api/login1.php">
            
             <div class="field">
                 <label for="username">Username</label>
@@ -82,14 +82,12 @@ form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const formData = new FormData(form);
     
-
-
     try {
         const response = await fetch(form.action, { method: 'POST', body: formData });
         const text = await response.text();
-        alert(text); 
+        alert(text); // عرض نتيجة login.php
     } catch (error) {
-        alert
+        alert('حدث خطأ أثناء تسجيل الدخول');
     }
 });
 </script>
