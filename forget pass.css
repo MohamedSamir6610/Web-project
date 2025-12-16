@@ -1,4 +1,4 @@
-/* Container & Body */
+
 body {
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg, #6b4f3a, #d6bfa3);
@@ -17,7 +17,7 @@ body {
     padding: 30px 25px;
 }
 
-/* Titles */
+
 h2 {
     text-align: center;
     color: #5b3a29;
@@ -29,7 +29,7 @@ h3 {
     margin-bottom: 10px;
 }
 
-/* Labels & Inputs */
+
 label {
     display: block;
     margin-top: 15px;
@@ -46,7 +46,7 @@ input[type="text"], input[type="email"], input[type="password"] {
     margin-bottom: 10px;
 }
 
-/* Buttons */
+
 button {
     padding: 12px 20px;
     margin-top: 15px;
@@ -66,18 +66,17 @@ button:hover {
     box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
 
-/* Save button - original color */
 button.save {
     background: linear-gradient(45deg, #a67c52, #d2b48c);
 }
 
-/* Delete button - original color */
+
 button.danger {
     background: linear-gradient(45deg, #ff416c, #ff4b2b);
     margin-top: 10px;
 }
 
-/* Messages */
+
 #message .message {
     max-width: 100%;
     margin: 20px auto;
@@ -91,13 +90,12 @@ button.danger {
     animation: fadeout 0.5s ease 3s forwards;
 }
 
-/* Success message - original blue */
 .message.success {
     background: linear-gradient(45deg, #2af598, #009efd);
     color: #fff;
 }
 
-/* Error message - original red */
+
 .message.error {
     background: linear-gradient(45deg, #ff416c, #ff4b2b);
     color: #fff;
