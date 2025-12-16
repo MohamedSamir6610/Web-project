@@ -1,58 +1,108 @@
+/* Container & Body */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f6f1eb;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #6b4f3a, #d6bfa3);
     margin: 0;
     padding: 0;
+    color: #3b2e2a;
 }
 
 .container {
-    width: 60%;
-    margin: 40px auto;
-    background-color: #ffffff;
-    padding: 25px;
-    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    margin: 50px auto;
+    background-color: rgba(255, 248, 240, 0.85);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    padding: 30px 25px;
 }
 
+/* Titles */
 h2 {
-    color: #5a3e2b;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 5px;
+    text-align: center;
+    color: #5b3a29;
+    margin-bottom: 20px;
+}
+h3 {
+    color: #5b3a29;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
-.section {
-    margin-bottom: 25px;
-}
-
+/* Labels & Inputs */
 label {
     display: block;
-    margin-top: 10px;
-    color: #333;
+    margin-top: 15px;
+    margin-bottom: 5px;
 }
 
-input, select {
+input[type="text"], input[type="email"], input[type="password"] {
     width: 100%;
-    padding: 8px;
-    margin-top: 5px;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #c5a77d;
+    font-size: 1em;
+    box-sizing: border-box;
+    margin-bottom: 10px;
 }
 
-.toggle {
-    margin-top: 10px;
-}
-
+/* Buttons */
 button {
-    background-color: #5a3e2b;
-    color: white;
-    padding: 10px 20px;
+    padding: 12px 20px;
+    margin-top: 15px;
+    width: 100%;
+    border-radius: 10px;
     border: none;
-    border-radius: 6px;
+    font-weight: bold;
+    font-size: 1em;
     cursor: pointer;
-    margin-right: 10px;
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
 }
 
 button:hover {
-    background-color: #7a5238;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
 
-.danger {
-    background-color: #c0392b;
+/* Save button - original color */
+button.save {
+    background: linear-gradient(45deg, #a67c52, #d2b48c);
+}
+
+/* Delete button - original color */
+button.danger {
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    margin-top: 10px;
+}
+
+/* Messages */
+#message .message {
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 15px 20px;
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    position: relative;
+    animation: fadeout 0.5s ease 3s forwards;
+}
+
+/* Success message - original blue */
+.message.success {
+    background: linear-gradient(45deg, #2af598, #009efd);
+    color: #fff;
+}
+
+/* Error message - original red */
+.message.error {
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    color: #fff;
+}
+
+@keyframes fadeout {
+    to { opacity: 0; transform: translateY(-10px); display: none; }
 }

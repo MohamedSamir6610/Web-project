@@ -1,58 +1,113 @@
+/* Background & Body */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f6f1eb;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #7b4f32, #d2b48c); /* بنيات وبيج */
     margin: 0;
     padding: 0;
+    color: #fff;
 }
 
-.container {
-    width: 60%;
-    margin: 40px auto;
-    background-color: #ffffff;
-    padding: 25px;
-    border-radius: 10px;
+/* Container/Form */
+form {
+    background-color: rgba(255,255,255,0.05);
+    padding: 30px 40px;
+    border-radius: 20px;
+    max-width: 400px;
+    margin: 60px auto;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    text-align: center;
+    position: relative;
 }
 
-h2 {
-    color: #5a3e2b;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 5px;
-}
-
-.section {
+/* Title */
+form h2 {
+    font-size: 2em;
+    color: #ffdd59;
     margin-bottom: 25px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    text-align: center; /* خليها في المنتصف */
 }
 
-label {
+/* Labels */
+form label {
     display: block;
-    margin-top: 10px;
-    color: #333;
+    text-align: left;
+    margin-bottom: 5px;
+    margin-top: 15px;
+    font-weight: 500;
 }
 
-input, select {
+/* Inputs */
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
     width: 100%;
-    padding: 8px;
-    margin-top: 5px;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
 }
 
-.toggle {
-    margin-top: 10px;
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(255,223,155,0.7); /* لون دافئ للتركيز */
+    border-color: #ffc107;
 }
 
-button {
-    background-color: #5a3e2b;
-    color: white;
-    padding: 10px 20px;
+/* Buttons */
+form button {
+    width: 100%;
+    padding: 12px 0;
+    border-radius: 10px;
     border: none;
-    border-radius: 6px;
+    font-size: 1em;
+    font-weight: bold;
     cursor: pointer;
-    margin-right: 10px;
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    margin-top: 15px;
+    transition: all 0.3s ease;
 }
 
-button:hover {
-    background-color: #7a5238;
+/* Save/Register button */
+form button[type="submit"] {
+    background: linear-gradient(45deg, #a0522d, #d2b48c); /* بنيات */
 }
 
-.danger {
-    background-color: #c0392b;
+form button[type="submit"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+/* Messages */
+.message {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 15px 20px;
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    position: relative;
+    animation: fadeout 0.5s ease 3s forwards;
+}
+
+.message.success {
+    background: linear-gradient(45deg, #2af598, #009efd);
+    color: #fff;
+}
+
+.message.error {
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    color: #fff;
+}
+
+@keyframes fadeout {
+    to { opacity: 0; transform: translateY(-10px); display: none; }
 }

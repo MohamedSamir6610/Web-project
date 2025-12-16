@@ -66,7 +66,7 @@ table tr:hover {
 }
 
 /* Inputs */
-input[type="text"], input[type="email"], input[type="password"] {
+input[type="text"], input[type="email"], input[type="password"], input[type="number"] {
     padding: 10px;
     border-radius: 8px;
     border: none;
@@ -74,6 +74,7 @@ input[type="text"], input[type="email"], input[type="password"] {
     margin: 3px 0;
     font-size: 1em;
     outline: none;
+    
 }
 
 /* Buttons */

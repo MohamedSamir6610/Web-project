@@ -1,7 +1,6 @@
 <?php
 include "../db.php";
 
-// التأكد من وصول البيانات
 if (!isset($_POST['Name'], $_POST['Email'], $_POST['Phone'], $_POST['NewPassword'])) {
     die("Form data not sent");
 }
@@ -11,13 +10,11 @@ $email    = trim($_POST['Email']);
 $phone    = trim($_POST['Phone']);
 $password = $_POST['NewPassword'];
 
-// التحقق من البيانات مش فاضية
 if ($name == "" || $email == "" || $password == "") {
     echo "❌ البيانات غير مكتملة، من فضلك أكمل جميع الحقول.";
     exit;
 }
 
-// تشفير الباسورد
 $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
 // التأكد من أن الإيميل مش موجود
