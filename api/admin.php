@@ -83,9 +83,13 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     exit;
 }
 
+<<<<<<< HEAD
 // FETCH DATA
 $customers = $conn->query("SELECT * FROM customer");
 $products  = $conn->query("SELECT * FROM product");
+=======
+$customer = $conn->query("SELECT * FROM customer");
+>>>>>>> d71654bf577a8da3eb6e0644cf26e54f12258f12
 ?>
 
 <!DOCTYPE html>
