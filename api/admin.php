@@ -45,7 +45,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     exit;
 }
 
-$customers = $conn->query("SELECT * FROM customer");
+$customer = $conn->query("SELECT * FROM customer");
 ?>
 
 <!DOCTYPE html>
