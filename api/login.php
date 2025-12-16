@@ -27,8 +27,7 @@ mysqli_stmt_store_result($stmt);
 
 if (mysqli_stmt_num_rows($stmt) == 0) {
    
-    echo "⚠️ There is an error. You must sign up or reset the password."
-;
+    echo "⚠️ There is an error. You must sign up or reset the password.";
     exit;
 }
 
