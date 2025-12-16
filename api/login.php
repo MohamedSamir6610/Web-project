@@ -1,7 +1,7 @@
 <?php
 include "../db.php";
 
-// التأكد من وصول البيانات
+
 if (!isset($_POST['Email'], $_POST['Password'])) {
     die("Form data not sent");
 }
@@ -9,13 +9,13 @@ if (!isset($_POST['Email'], $_POST['Password'])) {
 $email = trim($_POST['Email']);
 $password = $_POST['Password'];
 
-// التأكد من البيانات مش فاضية
+
 if ($email == "" || $password == "") {
-    echo "⚠️ هناك خطأ، يجب أن تقوم بالتسجيل أو فورمات الباسورد";
+    echo "⚠️ There is an error. You must sign up or reset the password.";
     exit;
 }
 
-// جلب الباسورد والاسم من الجدول بطريقة صحيحة
+
 $stmt = mysqli_prepare($conn, "SELECT password, name FROM customer WHERE email = ?");
 if (!$stmt) {
     die("Prepare failed: " . mysqli_error($conn));
@@ -26,20 +26,22 @@ mysqli_stmt_execute($stmt);
 mysqli_stmt_store_result($stmt);
 
 if (mysqli_stmt_num_rows($stmt) == 0) {
-    // الإيميل مش موجود
-    echo "⚠️ هناك خطأ، يجب أن تقوم بالتسجيل أو فورمات الباسورد";
+   
+    echo "⚠️ There is an error. You must sign up or reset the password."
+;
     exit;
 }
 
-// ربط النتائج
+
 mysqli_stmt_bind_result($stmt, $hashed_password, $name);
 mysqli_stmt_fetch($stmt);
 
-// التحقق من الباسورد
+
 if (password_verify($password, $hashed_password)) {
-    echo "✅ تسجيل الدخول ناجح! أهلاً بك مرة أخرى، <strong>$name</strong> 🎉";
+    echo "✅ Login successful! Welcome back.
+ <strong>$name</strong> 🎉";
 } else {
-    echo "⚠️ هناك خطأ، يجب أن تقوم بالتسجيل أو فورمات الباسورد";
+    echo "⚠️ There is an error. You must sign up or reset the password."    ;
 }
 
 mysqli_stmt_close($stmt);

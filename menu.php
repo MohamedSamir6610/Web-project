@@ -1,5 +1,5 @@
 <?php
-include 'db.php'; // ربط الداتا بيز
+include 'db.php'; 
 
 $products = $conn->query("SELECT * FROM product") or die("Error: " . $conn->error);
 ?>

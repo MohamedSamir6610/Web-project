@@ -1,7 +1,7 @@
 <?php
 include "../db.php";
 
-// Get the last account
+
 $stmt = mysqli_prepare($conn, "SELECT customer_id, name FROM customer ORDER BY customer_id DESC LIMIT 1");
 mysqli_stmt_execute($stmt);
 mysqli_stmt_store_result($stmt);
@@ -13,7 +13,6 @@ if(!$lastId){
     exit;
 }
 
-// Delete the account
 $deleteStmt = mysqli_prepare($conn, "DELETE FROM customer WHERE customer_id = ?");
 mysqli_stmt_bind_param($deleteStmt, "i", $lastId);
 
@@ -29,7 +28,7 @@ mysqli_close($conn);
 ?>
 
 <style>
-/* Messages Styling */
+
 .message {
     max-width: 500px;
     margin: 30px auto;

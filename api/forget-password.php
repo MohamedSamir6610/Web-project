@@ -1,12 +1,11 @@
 <?php
 include "../db.php";
 
-// Function to show messages
 function showMessage($type, $text){
     echo '<div class="message '.$type.'">'.$text.'</div>';
 }
 
-// Check required fields
+
 if(!isset($_POST['Name'], $_POST['Email'], $_POST['Phone'], $_POST['NewPassword'])){
     showMessage('error','❌ Please fill in all fields');
     exit;
@@ -22,7 +21,7 @@ if($name == "" || $email == "" || $phone == "" || $newPassword == ""){
     exit;
 }
 
-// Verify user exists
+
 $stmt = mysqli_prepare($conn, "SELECT customer_id FROM customer WHERE name=? AND email=? AND phone=?");
 mysqli_stmt_bind_param($stmt, "sss", $name, $email, $phone);
 mysqli_stmt_execute($stmt);
@@ -33,7 +32,6 @@ if(mysqli_stmt_num_rows($stmt) == 0){
     exit;
 }
 
-// Update password
 $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
 $updateStmt = mysqli_prepare($conn, "UPDATE customer SET password=? WHERE name=? AND email=? AND phone=?");
 mysqli_stmt_bind_param($updateStmt, "ssss", $hashedPassword, $name, $email, $phone);
@@ -50,7 +48,7 @@ mysqli_close($conn);
 ?>
 
 <style>
-/* Inputs */
+
 input[type="text"], input[type="email"], input[type="password"] {
     width: 100%;
     max-width: 400px;
@@ -63,7 +61,7 @@ input[type="text"], input[type="email"], input[type="password"] {
     box-sizing: border-box;
 }
 
-/* Messages Styling */
+
 .message {
     max-width: 500px;
     margin: 30px auto;

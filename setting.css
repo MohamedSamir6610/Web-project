@@ -1,13 +1,12 @@
-/* Background & Body */
+
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #7b4f32, #d2b48c); /* بنيات وبيج */
+    background: linear-gradient(135deg, #7b4f32, #d2b48c); 
     margin: 0;
     padding: 0;
     color: #fff;
 }
 
-/* Container/Form */
 form {
     background-color: rgba(255,255,255,0.05);
     padding: 30px 40px;
@@ -19,16 +18,16 @@ form {
     position: relative;
 }
 
-/* Title */
+
 form h2 {
     font-size: 2em;
     color: #ffdd59;
     margin-bottom: 25px;
     text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
-    text-align: center; /* خليها في المنتصف */
+    text-align: center; 
 }
 
-/* Labels */
+
 form label {
     display: block;
     text-align: left;
@@ -37,7 +36,7 @@ form label {
     font-weight: 500;
 }
 
-/* Inputs */
+
 form input[type="text"],
 form input[type="email"],
 form input[type="password"] {
@@ -55,11 +54,11 @@ form input[type="text"]:focus,
 form input[type="email"]:focus,
 form input[type="password"]:focus {
     outline: none;
-    box-shadow: 0 0 8px rgba(255,223,155,0.7); /* لون دافئ للتركيز */
+    box-shadow: 0 0 8px rgba(255,223,155,0.7);
     border-color: #ffc107;
 }
 
-/* Buttons */
+
 form button {
     width: 100%;
     padding: 12px 0;
@@ -74,9 +73,9 @@ form button {
     transition: all 0.3s ease;
 }
 
-/* Save/Register button */
+
 form button[type="submit"] {
-    background: linear-gradient(45deg, #a0522d, #d2b48c); /* بنيات */
+    background: linear-gradient(45deg, #a0522d, #d2b48c); 
 }
 
 form button[type="submit"]:hover {
@@ -84,7 +83,7 @@ form button[type="submit"]:hover {
     box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
 
-/* Messages */
+
 .message {
     max-width: 500px;
     margin: 20px auto;

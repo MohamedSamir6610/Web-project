@@ -9,9 +9,9 @@ if(!isset($_SESSION['username'])){
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
-    // ================= CUSTOMERS =================
+   
 
-    // ADD CUSTOMER
+   
     if(isset($_POST['add_customer'])){
         $name     = $_POST['name'];
         $email    = $_POST['email'];
@@ -24,7 +24,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         ");
     }
 
-    // EDIT CUSTOMER
+    
     if(isset($_POST['edit_customer'])){
         $email = $_POST['email'];
         $name  = $_POST['name'];
@@ -37,20 +37,20 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         ");
     }
 
-    // DELETE CUSTOMER
+    
     if(isset($_POST['delete_customer'])){
         $email = $_POST['email'];
         $conn->query("DELETE FROM customer WHERE email='$email'");
     }
 
-    // ================= PRODUCTS =================
+    
 
-    // ADD PRODUCT
+   
     if(isset($_POST['add_product'])){
         $name  = $_POST['p_name'];
         $price = $_POST['p_price'];
         $desc  = $_POST['p_desc'];
-        $image = $_POST['p_image']; // رابط أو اسم الصورة
+        $image = $_POST['p_image']; 
 
         $conn->query("
             INSERT INTO product (name, price, description, image)
@@ -58,7 +58,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         ");
     }
 
-    // EDIT PRODUCT
+   
     if(isset($_POST['edit_product'])){
         $name_old = $_POST['p_old_name'];
         $name_new = $_POST['p_name'];
@@ -73,7 +73,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         ");
     }
 
-    // DELETE PRODUCT
+   
     if(isset($_POST['delete_product'])){
         $name = $_POST['p_old_name'];
         $conn->query("DELETE FROM product WHERE name='$name'");
@@ -83,13 +83,13 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     exit;
 }
 
-<<<<<<< HEAD
-// FETCH DATA
+
+
 $customers = $conn->query("SELECT * FROM customer");
 $products  = $conn->query("SELECT * FROM product");
-=======
+
 $customer = $conn->query("SELECT * FROM customer");
->>>>>>> d71654bf577a8da3eb6e0644cf26e54f12258f12
+
 ?>
 
 <!DOCTYPE html>
@@ -109,7 +109,7 @@ $customer = $conn->query("SELECT * FROM customer");
     <button type="submit" class="logout" formaction="logout.php">Logout</button>
 </form>
 
-<!-- ================= CUSTOMERS ================= -->
+
 
 <h2>Customers</h2>
 
@@ -152,7 +152,7 @@ $customer = $conn->query("SELECT * FROM customer");
     <button type="submit" name="add_customer" class="edit">Add Customer</button>
 </form>
 
-<!-- ================= PRODUCTS ================= -->
+
 
 <h2>Menu Products</h2>
 
