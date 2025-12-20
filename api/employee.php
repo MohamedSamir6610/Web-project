@@ -3,10 +3,13 @@ include '../db.php';
 session_start();
 
 // لو الموظف مش مسجل دخول
-if(!isset($_SESSION['username'])){
+<
+
+if(!isset($_SESSION['username']) || $_SESSION['role'] != 'employee'){
     header("Location: login.php");
     exit;
 }
+
 
 // جلب المنتجات من قاعدة البيانات
 $products  = $conn->query("SELECT * FROM product");
