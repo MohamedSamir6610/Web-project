@@ -2,8 +2,11 @@
 include '../db.php';
 session_start();
 
-if(!isset($_SESSION['username'])){
-    header("Location: login.php");
+
+
+// حماية الصفحة: لو مش أدمن يتحول للصفحة الخاصة بالموظف
+if(!isset($_SESSION['username']) || $_SESSION['role'] != 'admin'){
+    header("Location: employee.php");
     exit;
 }
 
